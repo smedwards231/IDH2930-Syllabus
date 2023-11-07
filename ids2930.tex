@@ -1,0 +1,341 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2708
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \\documentclass[11pt, a4paper]\{article\}\
+%\\usepackage\{geometry\}\
+\\usepackage[inner=1.5cm,outer=1.5cm,top=2.5cm,bottom=2.5cm]\{geometry\}\
+\\pagestyle\{empty\}\
+\\usepackage\{graphicx\}\
+\\usepackage\{fancyhdr, lastpage, bbding, pmboxdraw\}\
+\\usepackage[usenames,dvipsnames]\{color\}\
+\\definecolor\{darkblue\}\{rgb\}\{0,0,.6\}\
+\\definecolor\{darkred\}\{rgb\}\{.7,0,0\}\
+\\definecolor\{darkgreen\}\{rgb\}\{0,.6,0\}\
+\\definecolor\{red\}\{rgb\}\{.98,0,0\}\
+\\usepackage[colorlinks,pagebackref,pdfusetitle,urlcolor=darkblue,citecolor=darkblue,linkcolor=darkred,bookmarksnumbered,plainpages=false]\{hyperref\}\
+\\renewcommand\{\\thefootnote\}\{\\fnsymbol\{footnote\}\}\
+\\usepackage\{multicol\}\
+\
+\\usepackage\{array\}\
+\
+\\usepackage\{booktabs\}\
+\
+\\pagestyle\{fancyplain\}\
+\\fancyhf\{\}\
+\\lhead\{ \\fancyplain\{\}\{Applied Biology\} \}\
+%\\chead\{ \\fancyplain\{\}\{\} \}\
+\\rhead\{ \\fancyplain\{\}\{\\today\} \}\
+%\\rfoot\{\\fancyplain\{\}\{page \\thepage\\ of \\pageref\{LastPage\}\}\}\
+\\fancyfoot[RO, LE] \{page \\thepage\\ of \\pageref\{LastPage\} \}\
+\\thispagestyle\{plain\}\
+\
+%%%%%%%%%%%% LISTING %%%\
+\\usepackage\{listings\}\
+\\usepackage\{caption\}\
+\\DeclareCaptionFont\{white\}\{\\color\{white\}\}\
+\\DeclareCaptionFormat\{listing\}\{\\colorbox\{gray\}\{\\parbox\{\\textwidth\}\{#1#2#3\}\}\}\
+\\captionsetup[lstlisting]\{format=listing,labelfont=white,textfont=white\}\
+\\usepackage\{verbatim\} % used to display code\
+\\usepackage\{fancyvrb\}\
+\\usepackage\{acronym\}\
+\\usepackage\{amsthm\}\
+\\VerbatimFootnotes % Required, otherwise verbatim does not work in footnotes!\
+\
+\\newcommand\{\\tabitem\}\{~~\\llap\{\\textbullet\}~~\}\
+\
+\\definecolor\{OliveGreen\}\{cmyk\}\{0.64,0,0.95,0.40\}\
+\\definecolor\{CadetBlue\}\{cmyk\}\{0.62,0.57,0.23,0\}\
+\\definecolor\{lightlightgray\}\{gray\}\{0.93\}\
+\
+\
+\
+\\lstset\{\
+%language=bash,                          % Code langugage\
+basicstyle=\\ttfamily,                   % Code font, Examples: \\footnotesize, \\ttfamily\
+keywordstyle=\\color\{OliveGreen\},        % Keywords font ('*' = uppercase)\
+commentstyle=\\color\{gray\},              % Comments font\
+numbers=left,                           % Line nums position\
+numberstyle=\\tiny,                      % Line-numbers fonts\
+stepnumber=1,                           % Step between two line-numbers\
+numbersep=5pt,                          % How far are line-numbers from code\
+backgroundcolor=\\color\{lightlightgray\}, % Choose background color\
+frame=none,                             % A frame around the code\
+tabsize=2,                              % Default tab size\
+captionpos=t,                           % Caption-position = bottom\
+breaklines=true,                        % Automatic line breaking?\
+breakatwhitespace=false,                % Automatic breaks only at whitespace?\
+showspaces=false,                       % Dont make spaces visible\
+showtabs=false,                         % Dont make tabls visible\
+columns=flexible,                       % Column format\
+morekeywords=\{__global__, __device__\},  % CUDA specific keywords\
+\}\
+\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\
+\\begin\{document\}\
+\\begin\{center\}\
+\{\\Large \\textsc\{IDH2930 Applied Biology: From Atoms to Society\}\}\
+\\end\{center\}\
+\\begin\{center\}\
+Fall 2023\
+\\end\{center\}\
+%\\date\{September 26, 2014\}\
+\
+\\begin\{center\}\
+\\rule\{6.5in\}\{0.4pt\}\
+\\begin\{minipage\}[t]\{.75\\textwidth\}\
+\\begin\{tabular\}\{lcccccl\}\
+\\textbf\{Instructors:\} Sydney Edwards and Dr. Peter Kima & & &  & \\textbf\{Time:\} M 1:55 -- 2:45pm \\\\\
+\\textbf\{Email:\} \\href\{mailto:sedwards2@ufl.edu\}\{sedwards2@ufl.edu\} & & & & \\textbf\{Place:\} 0119 Little Hall\
+\\end\{tabular\}\
+\\end\{minipage\}\
+\\rule\{6.5in\}\{0.4pt\}\
+\\end\{center\}\
+\\vspace\{.5cm\}\
+\\setlength\{\\unitlength\}\{1in\}\
+\\renewcommand\{\\arraystretch\}\{3\}\
+\
+\\noindent\\textbf\{Course Page:\}\
+\\begin\{flushleft\}\
+    \\url\{https://serenappliedbiology.github.io/\}\
+\\end\{flushleft\}\
+\
+\
+\\vskip.15in\
+\\noindent\\textbf\{Office Hours:\} After class or by appointment.\
+\
+\\vskip.15in\
+\\noindent\\textbf\{Main References:\} %\\footnotemark\
+\\begin\{itemize\}\
+\\item Robert M. Sapolsky, \{\\textit\{Behave: The Biology of Humans at Our Best and Worst\}\}, Penguin Books, 2017.\
+\\item Siddhartha Mukherjee, \{\\textit\{The Emperor of All Maladies: A Biography of Cancer\}\}, Scribner, 2011.\
+\
+\\end\{itemize\} \
+\
+% \\footnotetext\{Downloadable ebook versions are available on AeLP.\}\
+\
+\\vskip.15in\
+\\noindent\\textbf\{Objectives:\}  This course is designed to introduce undergraduate students to the foundational concepts underpinning biology. At the course's conclusion, students are expected to accomplish the following:\
+\
+\\begin\{itemize\}\
+    \\item Understand current debates and new advances within their discipline.\
+    \\item Develop a better intuition for how good science is conducted.\
+    \\item Understand basic concepts within genetics, neuroscience, and evolutionary biology. \
+    \\item Be able to articulate future research directions for their field of interest.\
+\\end\{itemize\}\
+\
+\
+\\vskip.15in\
+\\noindent\\textbf\{Prerequisites:\}\
+A high school-level understanding of biology, chemistry, and calculus is helpful though not required. \
+\
+\
+\\vspace*\{.15in\}\
+\
+\\setlength\{\\columnsep\}\{3cm\}\
+\
+\\begin\{multicols\}\{2\}\
+\\begin\{flushleft\}\
+    \\textbf\{Grading Breakdown\} \\\\\
+    Class participation \\hfill (40\\%) \\\\\
+    Initial course survey \\hfill (10\\%) \\\\\
+    Final project proposal \\hfill (10\\%) \\\\\
+    Final project draft \\hfill (10\\%) \\\\\
+    Peer review \\hfill (5\\%) \\\\ \
+    Final project \\hfill (15\\%) \\\\ \
+    Final project reflection \\hfill (10\\%) \\\\\
+    \\hrulefill \\\\ \
+    Total \\hfill (100\\%)\
+\\end\{flushleft\}\
+\\columnbreak\
+\\begin\{flushleft\}\
+    \\textbf\{Grading Scale\} \\\\\
+    A \\hfill $[$90\\% - 100\\%$]$ \\\\\
+    A- \\hfill $[$87\\% - 90\\%) \\\\\
+    B+ \\hfill $[$85\\% - 87\\%) \\\\\
+    B \\hfill $[$80\\% - 85\\%) \\\\\
+    B- \\hfill $[$77\\% - 80\\%) \\\\\
+    C+ \\hfill $[$75\\% - 77\\%) \\\\\
+    C \\hfill $[$70\\% - 75\\%) \\\\\
+    D \\hfill $[$60\\% - 70\\%) \\\\ \
+    E \\hfill $[$0\\% - 60\\%)\
+\\end\{flushleft\}\
+\\end\{multicols\}\
+\
+\\vspace*\{.15in\}\
+\\noindent\\textbf\{Grading Policy:\} \
+\\vspace*\{.15in\}\
+\
+\\noindent A minimum grade of B is required to earn Academic points towards your Honors Completion Requirements. (Exception: Honors Quest I and II sections require a C). Once you have earned your final grade in this course, please upload the course information and final grade from your Unofficial Transcript into your Honors Canvas Cohort: Honors Completion module to earn Honors Completion credit.\
+\
+\\vskip.15in\
+\\newpage\
+\\noindent\\textbf\{Important Dates:\}\
+\\begin\{center\} \\begin\{minipage\}\{3.8in\}\
+\\begin\{flushleft\}\
+Final Project Proposal \\dotfill October 16\\textsuperscript\{th\}, 2023 \\\\ \
+Final Project Draft \\dotfill November 20\\textsuperscript\{th\}, 2023 \\\\ \
+Final Project \\dotfill December 8\\textsuperscript\{th\}, 2023 \\\\ \
+Final Project Reflection \\dotfill December 11\\textsuperscript\{th\}, 2023 \\\\\
+\\end\{flushleft\}\
+\\end\{minipage\}\
+\\end\{center\}\
+\
+\\vskip.15in\
+\\noindent\\textbf\{Final Project Overview:\}  \
+\
+\\begin\{flushleft\}\
+This course is graded primarily on attendance and participation. The final project is designed to help you synthesize the topics from this course and can be any topic of your choosing. Additionally, you have free reign in how you present your final project. Some ideas are to interview a professor whose work you're interested in using a podcast-style format, a short video documentary (a few minutes) describing a facet of biology or medicine that you are passionate about, a formal research paper, a popular science-style blog, or an at-home independent research project. This list is not exhaustive and other project ideas are encouraged! Feel free to be as creative as you like. \
+\\end\{flushleft\}\
+\
+\
+\\vskip.15in\
+\\noindent\\textbf\{Class Policy:\}  \
+\\begin\{itemize\}\
+\\item Regular attendance is essential and expected. \
+\\item While doing the readings, take notes and think of any questions, ideas, or concepts you would like to discuss during the class session. This will only make our class sessions more interesting and useful to you as a student! \
+\\item If you are not able to attend a class session for any reason, please let me know in advance. I do not want this course to become a burden. If there is anything going on that makes completing this course difficult, reach out to me and we can develop a plan to help you successfully complete the course. \
+\\end\{itemize\}\
+\
+\\vskip.15in\
+\\noindent\\textbf\{Accommodations for Students with Disabilities:\}  \
+Students requesting classroom accommodation must first register with the Dean of Students Office. The Dean of Students Office will provide documentation to the student who must then provide this documentation to the instructor when requesting accommodation\
+\
+\\vskip.15in\
+\\noindent\\textbf\{UF Honor Code:\}  \
+\\begin\{flushleft\} The UF Student Honor Code (see \\href\{http://www.dso.ufl.edu/sccr/process/student-conduct-honor-code/\}\{\\nolinkurl\{dso.ufl.edu\}\} for details):\
+We, the members of the University of Florida community, pledge to hold ourselves and our peers to the highest standards of honesty and integrity. On all work submitted for credit by students at the University of Florida, the following pledge is either required or implied: \'93On my honor, I have neither given nor received unauthorized aid in doing this assignment.\'94\
+\\vskip.15in\
+Honor Code violations include copying on an exam (or helping another student to copy) and/or turning in an exam for regrading that has been changed since it was graded by the instructor. Any student found responsible for an academic honesty violation in this course will forfeit any applicable exam drop policy and be recommended sanctions consistent with the offense.\
+\\end\{flushleft\}\
+\
+\\vskip.15in\
+\\noindent\\textbf\{Campus Resources:\}  \
+\\begin\{flushleft\} Honors Program, 201 Walker Hall, 352-392-1519 \\\\\
+\
+Quick questions for an Honors advisor? Email \\href\{mailto:advisor@honors.ufl.edu\}\{advisor@honors.ufl.edu\} \\\\\
+\
+Need an Honors advising appointment? Schedule via Microsoft Bookings: \\href\{https://bit.ly/ufhonorsadvising\}\{\\nolinkurl\{ufhonorsadvising\}\} \
+\\end\{flushleft\}\
+\
+\\vskip.15in\
+\\begin\{flushleft\}\
+    The Counseling \\& Wellness Center \\\\ \
+    Provides confidential counseling services at no cost for currently enrolled students. Resources are available on campus for students having personal problems or lacking clear career or academic goals, which interfere with their academic performance. \\url\{www.counseling.ufl.edu/cwc/\}\
+\\end\{flushleft\}\
+\
+\
+\
+\
+\
+\
+\
+\\begin\{table\}\
+  \\centering\
+  \\setlength\\extrarowheight\{-7pt\}\
+  \\begin\{tabular\}\{lll\}\
+    \\toprule\
+    \\multicolumn\{3\}\{c\}\{\\textbf\{Course Outline\}\} \\\\[.1\\normalbaselineskip]\
+    Date & Topic & Materials \\\\\
+    \\midrule\
+    August 28\\textsuperscript\{th\} & Course Introduction & \
+    \\tabitem Read over syllabus \\\\\
+    \\midrule\
+    September 4\\textsuperscript\{th\} & Holiday & \\tabitem No class\\\\\
+    \\midrule\
+    September 11\\textsuperscript\{th\} & Genetics & \
+    \\tabitem Sean Carroll's Mindscape Podcast, \\textit\{Lea Goentoro\} \\\\\
+    & & \\textit\{on Regrowing Limbs\} \\\\\
+    & & \\tabitem Siddhartha Mukherjee, \\textit\{The Gene\}, pgs. 64-85 \\\\\
+    & & \\tabitem Robert Sapolsky, \\textit\{Behave\}, pgs. 711-717\\\\ \
+    \\midrule\
+    September 18\\textsuperscript\{th\} & Evolutionary Biology & \
+    \\tabitem Nick Lane, \\textit\{Power, Sex, Suicide: Mitochondria\} \\\\\
+    & & \\textit\{and the Meaning of Life\}, pgs. 278-293 \\\\\
+    & & \\tabitem Robert Sapolsky, \\textit\{Behave\}, pgs. 328-353 \\\\ \
+    \\midrule \
+    September 25\\textsuperscript\{th\} & Neuroscience & \
+    \\tabitem Antonio Damasio, \\textit\{Descartes' Error\}, pgs. 245-252 \\\\\
+    & & \\tabitem Robert Sapolsky, \\textit\{The Biology of Humans\} \\\\\
+    & & \\textit\{at Our Best and Worst\} \\\\\
+    & & \\tabitem The Decision Lab, \\textit\{The Somatic Marker Hypothesis\}\\\\ \
+    \\midrule\
+    October 2\\textsuperscript\{nd\} & Moral Psychology & \
+    \\tabitem Joshua Greene, \\textit\{Moral Tribes\}, pgs. 105-143 \\\\\
+    \\midrule \
+    October 9\\textsuperscript\{th\} & Cancer Biology & \
+    \\tabitem Michael Levin, \\textit\{How bioelectricity could regrow\} \\\\\
+    & & \\textit\{limbs and organs\} \\\\\
+    & & \\tabitem Siddhartha Mukherjee, \\textit\{The Emperor of All Maladies\}, \\\\ & & pgs. 193-201 \\\\\
+    & & \\tabitem Siddhartha Mukherjee, \\textit\{Cancer's Invasion Equation\} \\\\\
+    \\midrule \
+    October 16\\textsuperscript\{th\} & Research Panel & \
+    \\tabitem No readings this week \\\\ \
+    \\midrule \
+    October 23\\textsuperscript\{rd\} & Microbiology & \
+    \\tabitem Jenny Rohn, \\textit\{Bacteria and Antibiotics:\} \\\\\
+    & & \\textit\{Revenge of the Microbes\}\\\\\
+    & & \\tabitem Yasemin Saplakoglu, \\textit\{Mobile Genes From\} \\\\ \
+    & & \\textit\{the Mother Shape the Baby\'92s Microbiome\} \\\\\
+    \\midrule\
+    October 30\\textsuperscript\{th\} & Immunology & \
+    \\tabitem Erica Sonnenburg, \\textit\{Diet as a Lever to Improve\} \\\\\
+    & & \\textit\{Your Microbiome and Health\} \\\\\
+    & & \\tabitem Sheena Cruickshank, \\textit\{Harnessing the Power of\} \\\\\
+    & & \\textit\{Immunology to Heal Ourselves\} \\\\\
+    \\bottomrule \
+  \\end\{tabular\}\
+\\end\{table\}\
+\
+\\makeatletter\
+\\setlength\{\\@fptop\}\{0pt\}\
+\\makeatother\
+\
+\\begin\{table\}[ht!]\
+  \\centering\
+  \\setlength\\extrarowheight\{-7pt\}\
+  \\begin\{tabular\}\{lll\}\
+    \\toprule\
+    \\multicolumn\{3\}\{c\}\{\\textbf\{Course Outline (cont.)\}\} \\\\[.1\\normalbaselineskip]\
+    Date & Topic & Materials \\\\\
+    \\midrule\
+    November 6\\textsuperscript\{th\} & Scientific Ethics & \
+    \\tabitem Brian Christian, \\textit\{The Alignment Problem\}, \\\\ \
+    & & pgs. 82-90 \\\\\
+    & & \\tabitem Arlene Balkansky, \\textit\{Radium Girls:\} \\\\\
+    & & \\textit\{Living Dead Women\} \\\\\
+    & & \\tabitem Abhijit Banerjee and Esther Duflo, \\\\ \
+    & & \\textit\{Poor Economics\}, pgs. 41-70 (fine to skim this) \\\\\
+    \\midrule \
+    November 13\\textsuperscript\{th\} & Philosophy of Science &\
+    \\tabitem Stanford Encyclopedia of Philosophy, \\textit\{David Hume\}, \\\\\
+    & & Part 5: Causation \\\\\
+    & & \\tabitem Eric Winsberg, \\textit\{Causal Inference in\} \\\\ \
+    & & \\textit\{Complex Non-linear Systems: A Cautionary Tale\} \\\\\
+    & & \\tabitem Rafal Bogacz, \\textit\{Dopamine role in\} \\\\\
+    & & \\textit\{learning and action inference\}, eLife Digest \\\\\
+    & & \\tabitem David Hume on Causation \\\\\
+    \\midrule\
+    November 20\\textsuperscript\{th\} & Peer Review & \
+    \\tabitem Work on peer reviews during class time \\\\\
+    \\midrule \
+    December 4\\textsuperscript\{th\} & Final Project &\
+    \\tabitem Present Final Project \\\\\
+    \\bottomrule\
+  \\end\{tabular\}\
+\\end\{table\}\
+\
+% \\begin\{center\} \
+% \\begin\{minipage\}\{5in\}\
+% \\begin\{flushleft\}\
+% %Chapter 1 \\dotfill ~$\\approx$ 3 days \\\\\
+% % \{\\color\{darkgreen\}\{\\Rectangle\}\} ~A little of probability theory and graph theory	\
+% \\end\{flushleft\}\
+% \\end\{minipage\}\
+% \\end\{center\}\
+\
+%%%%%% THE END \
+\\end\{document\} }
